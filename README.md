@@ -10,7 +10,7 @@
 - [Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning](#Introduction-to-TensorFlow-for-Artificial-Intelligence,-Machine-Learning,-and-Deep-Learning)
     - [A new programming paradigm](#A-new-programming-paradigm)
         - [A primer in machine learning](#A-primer-in-machine-learning)
-        - [The "Hello World" of neural networks](#The-"Hello-World"-of-neural-networks)
+        - [The Hello World of neural networks](#The-Hello-World-of-neural-networks)
 
 
 # Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning
@@ -40,7 +40,7 @@ y = 2x - 1
 
 But in machine learning when try figure out this rule, the machine will use probabilities to solve this. So if we try to predict `x = 10`, with our function `y = 2x - 1` we get `y = 90`, but with machine learning we going to be close to `90`.
 
-### The "Hello World" of neural networks
+### The Hello World of neural networks
 
 A neural network is basically a set of functions wich can learn patterns. The simpliest neural network is one that has only one neuron in it.
 
