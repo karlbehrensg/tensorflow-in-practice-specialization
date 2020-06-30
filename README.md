@@ -11,6 +11,7 @@
     - [A new programming paradigm](#A-new-programming-paradigm)
         - [A primer in machine learning](#A-primer-in-machine-learning)
         - [The Hello World of neural networks](#The-Hello-World-of-neural-networks)
+        - [From rules to data](#From-rules-to-data)
 
 
 # Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning
@@ -81,3 +82,7 @@ model.fit(xs, ys, epochs=500)
 ```
 
 - **epochs:** determine how many times loop the training model with the process describe earlier.
+
+### From rules to data
+
+You saw that the traditional paradigm of expressing rules in a coding language may not always work to solve a problem. As such, scenarios such as Computer Vision are very difficult to solve with rules-based programming. Instead, if we feed a computer with enough data that we describe (or label) as what we want it to recognize, given that computers are really good at processing data and finding patterns that match, then we could potentially ‘train’ a system to solve a problem. We saw a super simple example of that -- fitting numbers to a line.
