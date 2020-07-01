@@ -196,5 +196,5 @@ If you've ever done any kind of image processing, it usually involves having a *
 For every pixel, take its value, and take a look at the value of its neighbors. If our filter is three by three, then we can take a look at the immediate neighbor, so that you have a corresponding three by three grid. Then to get the new value for the pixel, we simply multiply each neighbor by the corresponding value in the filter. 
 
 <div align="center"> 
-  <img src="readme_img/filter-image-example.png" width="60%">
+  <img src="readme_img/filter-image-example.png" width="80%">
 </div>
