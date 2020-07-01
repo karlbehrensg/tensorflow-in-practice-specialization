@@ -8,15 +8,18 @@
 
 # Table of Content
 - [Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning](#Introduction-to-TensorFlow-for-Artificial-Intelligence,-Machine-Learning,-and-Deep-Learning)
-    - [A new programming paradigm](#A-new-programming-paradigm)
-        - [A primer in machine learning](#A-primer-in-machine-learning)
-        - [The Hello World of neural networks](#The-Hello-World-of-neural-networks)
-        - [From rules to data](#From-rules-to-data)
-    - [Introduction to Computer Vision](#Introduction-to-Computer-Vision)
-        - [An introduction to computer vision](#An-introduction-to-computer-vision)
-        - [Writing code to load training data](#Writing-code-to-load-training-data)
-        - [Coding a Computer Vision Neural Network](#Coding-a-Computer-Vision-Neural-Network)
-        - [Using Callbacks to control training](#Using-Callbacks-to-control-training)
+  - [A new programming paradigm](#A-new-programming-paradigm)
+    - [A primer in machine learning](#A-primer-in-machine-learning)
+    - [The Hello World of neural networks](#The-Hello-World-of-neural-networks)
+    - [From rules to data](#From-rules-to-data)
+  - [Introduction to Computer Vision](#Introduction-to-Computer-Vision)
+    - [An introduction to computer vision](#An-introduction-to-computer-vision)
+    - [Writing code to load training data](#Writing-code-to-load-training-data)
+    - [Coding a Computer Vision Neural Network](#Coding-a-Computer-Vision-Neural-Network)
+    - [Using Callbacks to control training](#Using-Callbacks-to-control-training)
+  - [Enhancing Vision with Convolutional Neural Networks](#Enhancing-Vision-with-Convolutional-Neural-Networks)
+    - [What are convolutions and pooling?](#What-are-convolutions-and-pooling?)
+
 
 
 # Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning
@@ -183,3 +186,15 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy')
 # We should pass our callbacks to the param callbacks in the fit function.
 model.fit(training_images, training_labels, epochs=30, callbacks=[callbacks])
 ```
+
+## Enhancing Vision with Convolutional Neural Networks
+
+### What are convolutions and pooling?
+
+If you've ever done any kind of image processing, it usually involves having a **filter** and passing that **filter** over the image in order to change the underlying image.
+
+For every pixel, take its value, and take a look at the value of its neighbors. If our filter is three by three, then we can take a look at the immediate neighbor, so that you have a corresponding three by three grid. Then to get the new value for the pixel, we simply multiply each neighbor by the corresponding value in the filter. 
+
+<div align="center"> 
+  <img src="readme_img/filter-image-example.png" width="60%">
+</div>
