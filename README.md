@@ -18,7 +18,7 @@
     - [Coding a Computer Vision Neural Network](#Coding-a-Computer-Vision-Neural-Network)
     - [Using Callbacks to control training](#Using-Callbacks-to-control-training)
   - [Enhancing Vision with Convolutional Neural Networks](#Enhancing-Vision-with-Convolutional-Neural-Networks)
-    - [What are convolutions and pooling?](#What-are-convolutions-and-pooling?)
+    - [What are convolutions and pooling?](#What-are-convolutions-and-pooling)
 
 
 
