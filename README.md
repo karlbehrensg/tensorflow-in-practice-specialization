@@ -14,6 +14,8 @@
         - [From rules to data](#From-rules-to-data)
     - [Introduction to Computer Vision](#Introduction-to-Computer-Vision)
         - [An introduction to computer vision](#An-introduction-to-computer-vision)
+        - [Writing code to load training data](#Writing-code-to-load-training-data)
+        - [Coding a Computer Vision Neural Network](#Coding-a-Computer-Vision-Neural-Network)
 
 
 # Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning
@@ -100,3 +102,33 @@ Computer vision is the field of having a computer understand and label what is p
 </div>
 
 So one way to solve that is to use lots of pictures of clothing and tell the computer what that's a picture of and then have the computer figure out the patterns that give you the difference between a shoe, and a shirt, and a handbag, and a coat.
+
+### Writing code to load training data
+
+In this lesson, you're going to use them to go a little deeper but the overall API should look familiar. The one big difference will be in the data. The last time you had your six pairs of numbers, so you could hard code it. This time you have to load 70,000 images off the disk, so there'll be a bit of code to handle that. Fortunately, it's still quite simple because Fashion-MNIST is available as a data set with an API call in TensorFlow. We simply declare an object of type MNIST loading it from the Keras database. On this object, if we call the load data method, it will return four lists to us.
+
+```py
+import tensorflow as tf
+from tensorflow import keras
+
+fashion_mnist = keras.datasets.fashion_mnist
+(train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
+```
+
+### Coding a Computer Vision Neural Network
+
+In our new **sequential** now we have three layers. The important things to look at are the **first** and the **last** layers.
+
+```py
+model = keras.Sequential([
+    keras.layers.Flatten(input_shape=(28, 28)),
+    keras.layers.Dense(128, activation=tf.nn.relu),
+    keras.layers.Dense(10, activation=tf.nn.softmax)
+])
+```
+
+The **last** layer has 10 neurons in it because we have 10 classes of clothing in the dataset, and they should always match.
+
+The **first** layer is a flatten layer with the input shaping 28 by 28, and if you remember our images are 28 by 28 square and turns it into a simple linear array.
+
+Beetween we have the **hidden** layer and here the interesting things happen. These are like variables in a function.
