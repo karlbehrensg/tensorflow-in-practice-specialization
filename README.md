@@ -20,6 +20,7 @@
   - [Enhancing Vision with Convolutional Neural Networks](#Enhancing-Vision-with-Convolutional-Neural-Networks)
     - [What are convolutions and pooling?](#What-are-convolutions-and-pooling)
     - [Implementing convolutional layers](#Implementing-convolutional-layers)
+    - [Implementing pooling layers](#Implementing-pooling-layers)
 
 
 
