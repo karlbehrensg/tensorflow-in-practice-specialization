@@ -19,6 +19,7 @@
     - [Using Callbacks to control training](#Using-Callbacks-to-control-training)
   - [Enhancing Vision with Convolutional Neural Networks](#Enhancing-Vision-with-Convolutional-Neural-Networks)
     - [What are convolutions and pooling?](#What-are-convolutions-and-pooling)
+    - [Implementing convolutional layers](#Implementing-convolutional-layers)
 
 
 
@@ -198,3 +199,46 @@ For every pixel, take its value, and take a look at the value of its neighbors. 
 <div align="center"> 
   <img src="readme_img/filter-image-example.png" width="80%">
 </div>
+
+### Implementing convolutional layers
+
+The convolutional layers take the pixel and apply the filters for dimension we define.
+
+```py
+model = tf.keras.models.Sequential([
+
+  # We generate 64 filters for a dimension by 3x3
+  tf.keras.layers.Conv2D(64, (3, 3), activation='relu', input_shape=(28, 28, 1)),
+  tf.keras.layers.MaxPooling2D(2, 2),
+  tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
+  tf.keras.layers.MaxPooling2D(2, 2),
+
+  # Start from here is the same layers we saw before.
+  tf.keras.layers.Flatten(),
+  tf.keras.layers.Dense(128, activation='relu'),
+  tf.keras.layers.Dense(10, activation='softmax')
+])
+```
+
+### Implementing pooling layers
+
+The pooling layer define the value of pixel we analyze. In this case we use _MaxPooling2D_ and this take the maximun value from a dimension we define.
+
+```py
+model = tf.keras.models.Sequential([
+
+  tf.keras.layers.Conv2D(64, (3, 3), activation='relu', input_shape=(28, 28, 1)),
+
+  # Define a Pooling layer.
+  tf.keras.layers.MaxPooling2D(2, 2),
+  tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
+  tf.keras.layers.MaxPooling2D(2, 2),
+
+  # Start from here is the same layers we saw before.
+  tf.keras.layers.Flatten(),
+  tf.keras.layers.Dense(128, activation='relu'),
+  tf.keras.layers.Dense(10, activation='softmax')
+])
+```
+
+For see the summary of neural network we can use _model.summary()_.
