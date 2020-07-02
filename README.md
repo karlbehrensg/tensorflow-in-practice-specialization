@@ -21,6 +21,8 @@
     - [What are convolutions and pooling?](#What-are-convolutions-and-pooling)
     - [Implementing convolutional layers](#Implementing-convolutional-layers)
     - [Implementing pooling layers](#Implementing-pooling-layers)
+  - [Using real world Images](#Using-real-world-Images)
+    - [Understanding ImageGenerator](#Understanding-ImageGenerator)
 
 
 
@@ -243,3 +245,31 @@ model = tf.keras.models.Sequential([
 ```
 
 For see the summary of neural network we can use _model.summary()_.
+
+## Using real world Images
+
+### Understanding ImageGenerator
+
+What happens when you use larger images and where the feature might be in different locations? For example, how about these images of horses and humans? They have different sizes and different aspect ratios. The subject can be in different locations. In some cases, there may even be multiple subjects.
+
+One feature of the image generator is that you can point it at a directory and then the sub-directories of that will automatically generate labels for you. So for example, consider this directory structure. You have an images directory and in that, you have sub-directories for training and validation. When you put sub-directories in these for horses and humans and store the requisite images in there, the image generator can create a feeder for those images and auto label them for you.
+
+<div align="center"> 
+  <img src="readme_img/directories-structure.png" width="80%">
+</div>
+
+The image generator class is available in `Keras.preprocessing.image`. You can then instantiate an image generator like this. I'm going to pass rescale to it to normalize the data. You can then call the flow from directory method on it to get it to load images from that directory and its sub-directories. It's a common mistake that people point the generator at the sub-directory. It will fail in that circumstance. **You should always point it at the directory that contains sub-directories that contain your images.** 
+
+```py
+from tensorflow.keras.preprocessing.image
+import ImageDataGenerator
+
+train_datagen = ImageDataGenerator(rescale=1./255)
+
+train_generator = train_datagen.flow_from_directory(
+  train_dir,
+  target_size=(300, 300),
+  batch_size=128,
+  class_mode='binary'
+)
+```
