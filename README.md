@@ -23,6 +23,7 @@
     - [Implementing pooling layers](#Implementing-pooling-layers)
   - [Using real world Images](#Using-real-world-Images)
     - [Understanding ImageGenerator](#Understanding-ImageGenerator)
+- [Convolutional Neural Networks in TensorFlow](#Convolutional-Neural-Networks-in-TensorFlow)
 
 
 
@@ -273,3 +274,5 @@ train_generator = train_datagen.flow_from_directory(
   class_mode='binary'
 )
 ```
+
+# Convolutional Neural Networks in TensorFlow
